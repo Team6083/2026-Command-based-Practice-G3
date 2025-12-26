@@ -16,8 +16,5 @@ public class Constants {
         public static final int vic4ID = 22;
         public static final int tal1ID = 33;
         public static final int tal2ID = 32;
-    
-        
     }
-
 }
