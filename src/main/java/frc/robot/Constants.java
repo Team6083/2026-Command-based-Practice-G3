@@ -9,4 +9,15 @@ public class Constants {
     public static class controllerConstants {
         public static final int port = 0;
     }
+    public static class motorConstants {
+        public static final int vic1ID = 34;
+        public static final int vic2ID = 31;
+        public static final int vic3ID = 21;
+        public static final int vic4ID = 22;
+        public static final int tal1ID = 33;
+        public static final int tal2ID = 32;
+    
+        
+    }
+
 }
