@@ -6,16 +6,16 @@ package frc.robot;
 
 /** Add your docs here. */
 public class Constants {
-    public static class ControllerConstants {
-        public static final int port = 0;
-    }
+  public static class ControllerConstants {
+    public static final int port = 0;
+  }
 
-    public static class MotorConstants {
-        public static final int vic1ID = 34;
-        public static final int vic2ID = 31;
-        public static final int vic3ID = 21;
-        public static final int vic4ID = 22;
-        public static final int tal1ID = 33;
-        public static final int tal2ID = 32;
-    }
+  public static class MotorConstants {
+    public static final int vic1ID = 34;
+    public static final int vic2ID = 31;
+    public static final int vic3ID = 21;
+    public static final int vic4ID = 22;
+    public static final int tal1ID = 33;
+    public static final int tal2ID = 32;
+  }
 }
