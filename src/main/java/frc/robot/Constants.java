@@ -20,6 +20,7 @@ public class Constants {
   }
 
   public static class DriveConstants {
-    public static final double speed = 0.3;
+    public static final double forwardSpeed = 0.3;
+    public static final double backSpeed = -0.3;
   }
 }
