@@ -17,6 +17,8 @@ public class RobotContainer {
   XboxController joy = new XboxController(ControllerConstants.port);
   VictorSPX vic1 = new VictorSPX(MotorConstants.vic1ID);
   VictorSPX vic2 = new VictorSPX(MotorConstants.vic2ID);
+  VictorSPX vic3 = new VictorSPX(MotorConstants.vic3ID);
+  VictorSPX vic4 = new VictorSPX(MotorConstants.vic4ID);
   TalonSRX tal1 = new TalonSRX(MotorConstants.tal1ID);
   TalonSRX tal2 = new TalonSRX(MotorConstants.tal2ID);
   public RobotContainer() {
