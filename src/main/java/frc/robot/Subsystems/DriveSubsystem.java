@@ -15,6 +15,7 @@ public class DriveSubsystem extends SubsystemBase {
   VictorSPX vic2 = new VictorSPX(Constants.MotorConstants.vic2ID);
   TalonSRX tal1 = new TalonSRX(Constants.MotorConstants.tal1ID);
   TalonSRX tal2 = new TalonSRX(Constants.MotorConstants.tal2ID);
+  
   /** Creates a new DriveSubsystem. */
   public DriveSubsystem() {}
 
@@ -23,28 +24,28 @@ public class DriveSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void forward(){
+  public void forward() {
     vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
     tal1.follow(vic1);
     vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
     tal2.follow(vic2);
   }
 
-  public void back(){
+  public void back() {
     vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
     tal1.follow(vic1);
     vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
     tal2.follow(vic2);
   }
 
-  public void left(){
+  public void left() {
     vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
     tal1.follow(vic1);
     vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
     tal2.follow(vic2);
   }
 
-  public void right(){
+  public void right() {
     vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
     tal1.follow(vic1);
     vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
