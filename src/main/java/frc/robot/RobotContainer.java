@@ -6,7 +6,6 @@ package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
-
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
@@ -21,6 +20,7 @@ public class RobotContainer {
   VictorSPX vic4 = new VictorSPX(MotorConstants.vic4ID);
   TalonSRX tal1 = new TalonSRX(MotorConstants.tal1ID);
   TalonSRX tal2 = new TalonSRX(MotorConstants.tal2ID);
+
   public RobotContainer() {
     configureBindings();
   }
