@@ -36,4 +36,18 @@ public class DriveSubsystem extends SubsystemBase {
     vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
     tal2.follow(vic2);
   }
+
+  public void left(){
+    vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
+    tal1.follow(vic1);
+    vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
+    tal2.follow(vic2);
+  }
+
+  public void right(){
+    vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
+    tal1.follow(vic1);
+    vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
+    tal2.follow(vic2);
+  }
 }
