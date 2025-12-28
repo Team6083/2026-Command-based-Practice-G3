@@ -5,17 +5,24 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.commands.CoralShooter_backCmd;
+import frc.robot.commands.CoralShooter_forwardCmd;
+import frc.robot.subsystems.CoralShooterSubsystem;
 
 public class RobotContainer {
+  CommandXboxController xbox = new CommandXboxController(Constants.ControllerConstants.port);
+  CoralShooterSubsystem CoralShooter = new CoralShooterSubsystem();
+
   public RobotContainer() {
     configureBindings();
   }
-
   private void configureBindings() {
+    xbox.rightTrigger().whileTrue(new CoralShooter_forwardCmd(CoralShooter));
+    xbox.leftTrigger().whileTrue(new CoralShooter_backCmd(CoralShooter));
   }
-
+    
   public Command getAutonomousCommand() {
-    return Commands.print("No autonomous command configured");
+    return null;
   }
 }
