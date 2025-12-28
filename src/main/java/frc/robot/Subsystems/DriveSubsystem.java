@@ -4,6 +4,7 @@
 
 package frc.robot.Subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -20,5 +21,12 @@ public class DriveSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+  }
+
+  public void forward(){
+    vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.speed);
+    tal1.follow(vic1);
+    vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.speed);
+    tal2.follow(vic2);
   }
 }
