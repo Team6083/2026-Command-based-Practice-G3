@@ -7,12 +7,10 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class DriveSubsystem extends SubsystemBase {
-  XboxController joy = new XboxController(Constants.ControllerConstants.port);
   VictorSPX vic1 = new VictorSPX(Constants.MotorConstants.vic1ID);
   VictorSPX vic2 = new VictorSPX(Constants.MotorConstants.vic2ID);
   TalonSRX tal1 = new TalonSRX(Constants.MotorConstants.tal1ID);
@@ -26,31 +24,11 @@ public class DriveSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void forward() {
-    vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
+  public void setMotorSpeed(double leftSpeed, double rightSpeed){
+    vic1.set(ControlMode.PercentOutput, leftSpeed);
     tal1.follow(vic1);
-    vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
+    vic2.set(ControlMode.PercentOutput, rightSpeed);
     tal2.follow(vic2);
+  }
   }
 
-  public void back() {
-    vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
-    tal1.follow(vic1);
-    vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
-    tal2.follow(vic2);
-  }
-
-  public void left() {
-    vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
-    tal1.follow(vic1);
-    vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
-    tal2.follow(vic2);
-  }
-
-  public void right() {
-    vic1.set(ControlMode.PercentOutput, Constants.DriveConstants.forwardSpeed);
-    tal1.follow(vic1);
-    vic2.set(ControlMode.PercentOutput, Constants.DriveConstants.backSpeed);
-    tal2.follow(vic2);
-  }
-}
