@@ -9,6 +9,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import frc.robot.commands.DriveCmd;
 
 public class DriveSubsystem extends SubsystemBase {
   VictorSPX vic1 = new VictorSPX(Constants.MotorConstants.vic1ID);
@@ -17,7 +18,9 @@ public class DriveSubsystem extends SubsystemBase {
   TalonSRX tal2 = new TalonSRX(Constants.MotorConstants.tal2ID);
   
   /** Creates a new DriveSubsystem. */
-  public DriveSubsystem() {}
+  public DriveSubsystem() {
+    setDefaultCommand(new DriveCmd(DriveSubsystem.this));
+  }
 
   @Override
   public void periodic() {
