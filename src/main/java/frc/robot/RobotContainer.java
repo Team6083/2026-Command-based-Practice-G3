@@ -9,7 +9,8 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class RobotContainer {
-    CommandXboxController joy = new CommandXboxController(Constants.ControllerConstants.port);
+  CommandXboxController joy = new CommandXboxController(Constants.ControllerConstants.port);
+  
   public RobotContainer() {
     configureBindings();
   }

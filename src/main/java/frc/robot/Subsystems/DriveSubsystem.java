@@ -24,11 +24,11 @@ public class DriveSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void setMotorSpeed(double leftSpeed, double rightSpeed){
+  public void setMotorSpeed(double leftSpeed, double rightSpeed) {
     vic1.set(ControlMode.PercentOutput, leftSpeed);
     tal1.follow(vic1);
     vic2.set(ControlMode.PercentOutput, rightSpeed);
     tal2.follow(vic2);
   }
-  }
+}
 
