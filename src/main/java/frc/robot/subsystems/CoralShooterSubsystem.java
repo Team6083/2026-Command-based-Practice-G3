@@ -5,7 +5,6 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -15,9 +14,7 @@ public class CoralShooterSubsystem extends SubsystemBase {
     VictorSPX vic3 = new VictorSPX(Constants.MotorConstants.vic3ID);
     
     /** Creates a new CoralShooterSubsystem. */
-    public CoralShooterSubsystem() {
-       vic3.setNeutralMode(NeutralMode.Coast);
-    }
+    public CoralShooterSubsystem() {}
   
   
     @Override
