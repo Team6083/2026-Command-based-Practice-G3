@@ -6,7 +6,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.DriveSubsystem;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class DriveCmd extends Command {
@@ -14,8 +14,9 @@ public class DriveCmd extends Command {
   DriveSubsystem driveSubsystem;
   
   /** Creates a new DriveCmd. */
-  public DriveCmd(DriveSubsystem driveSubsystem) {
+  public DriveCmd(DriveSubsystem driveSubsystem, CommandXboxController joy) {
     this.driveSubsystem = driveSubsystem;
+    this.joy = joy;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(driveSubsystem);
   }

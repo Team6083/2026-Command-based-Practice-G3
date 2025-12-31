@@ -8,13 +8,13 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.DriveCmd;
-import frc.robot.subsystems.DriveSubsystem;
 
 public class RobotContainer {
   CommandXboxController joy = new CommandXboxController(Constants.ControllerConstants.port);
-  DriveCmd setMotorSpeed = new DriveCmd(new DriveSubsystem());
-  
+  DriveSubsystem driveSubsystem = new DriveSubsystem();
+
   public RobotContainer() {
+    driveSubsystem.setDefaultCommand(new DriveCmd(driveSubsystem, joy));
     configureBindings();
   }
 

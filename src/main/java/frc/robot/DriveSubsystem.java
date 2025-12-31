@@ -2,14 +2,13 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.subsystems;
+package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants;
-import frc.robot.commands.DriveCmd;
+import frc.robot.Constants.MotorConstants;
 
 public class DriveSubsystem extends SubsystemBase {
   VictorSPX vic1 = new VictorSPX(Constants.MotorConstants.vic1ID);
@@ -18,9 +17,7 @@ public class DriveSubsystem extends SubsystemBase {
   TalonSRX tal2 = new TalonSRX(Constants.MotorConstants.tal2ID);
   
   /** Creates a new DriveSubsystem. */
-  public DriveSubsystem() {
-    setDefaultCommand(new DriveCmd(DriveSubsystem.this));
-  }
+  public DriveSubsystem() {}
 
   @Override
   public void periodic() {
@@ -28,7 +25,7 @@ public class DriveSubsystem extends SubsystemBase {
   }
 
   public void setMotorSpeed(double leftSpeed, double rightSpeed) {
-    vic1.set(ControlMode.PercentOutput, leftSpeed);
+    vic1.set(ControlMode.PercentOutput, -leftSpeed);
     tal1.follow(vic1);
     vic2.set(ControlMode.PercentOutput, rightSpeed);
     tal2.follow(vic2);
