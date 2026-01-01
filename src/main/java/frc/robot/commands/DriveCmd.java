@@ -10,13 +10,13 @@ import frc.robot.DriveSubsystem;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class DriveCmd extends Command {
-  CommandXboxController joy;
+  CommandXboxController controller;
   DriveSubsystem driveSubsystem;
   
   /** Creates a new DriveCmd. */
-  public DriveCmd(DriveSubsystem driveSubsystem, CommandXboxController joy) {
+  public DriveCmd(DriveSubsystem driveSubsystem, CommandXboxController controller) {
     this.driveSubsystem = driveSubsystem;
-    this.joy = joy;
+    this.controller = controller;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(driveSubsystem);
   }
@@ -28,7 +28,7 @@ public class DriveCmd extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    driveSubsystem.setMotorSpeed(joy.getRawAxis(1), joy.getRawAxis(5));
+    driveSubsystem.setMotorSpeed(controller.getRawAxis(1), controller.getRawAxis(5));
   }
 
   // Called once the command ends or is interrupted.
