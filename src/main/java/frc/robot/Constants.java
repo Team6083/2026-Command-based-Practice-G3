@@ -18,4 +18,9 @@ public class Constants {
     public static final int tal1ID = 33;
     public static final int tal2ID = 32;
   }
+
+  public static class DriveConstants {
+    public static final double forwardSpeed = 0.3;
+    public static final double backSpeed = -0.3;
+  }
 }
